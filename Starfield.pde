@@ -1,26 +1,27 @@
-//your code here
-void setup()
-{
-	//your code here
+dot olive;
+void setup(){
+	size(500,500);
+	olive = new dot();
 }
-void draw()
-{
-	//your code here
+void draw(){
+	olive.show();
+	olive.move();
 }
-class NormalParticle
-{
-	//your code here
+class dot{
+	float myX, myY;
+	float angle, speed;
+	dot(){
+		myX = 250;
+		myY = 250;
+		angle = 90;
+		speed = PI/2;
+	}
+	void show(){
+		noFill();
+		stroke(100,50,250);
+		ellipse(myX,myY,25,25);
+	}
+	void move(){
+		myX = myX + speed;
+	}
 }
-interface Particle
-{
-	//your code here
-}
-class OddballParticle //uses an interface
-{
-	//your code here
-}
-class JumboParticle //uses inheritance
-{
-	//your code here
-}
-
