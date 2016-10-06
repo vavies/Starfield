@@ -1,8 +1,8 @@
 int center = 250;
-float outerK1 = 0.25;
-float outerK2 = 0.75;
-float innerK1 = 0.65;
-float innerK2 = 1.25;
+float outerK1 = .4;
+float outerK2 = 1.8;
+float innerK1 = 7.5;
+float innerK2 = 1.5;
 dot [] olive;
 void setup(){
 	size(500,500);
@@ -41,7 +41,7 @@ class dot{
 	void move(int u){
 		myX = center + 150*cos(outerK1*(u+speed));
 		myY = center + 150*sin(outerK2*(u+speed));
-		speed = speed +0.01;
+		speed = speed +0.005;
 	}
 }
 class counterclock extends dot{
@@ -53,7 +53,7 @@ class counterclock extends dot{
 	void move(int u){
 		myX = center + 100*cos(innerK1*(u+speed));
 		myY = center + 100*sin(innerK2*(u+speed));
-		speed = speed -0.01;
+		speed = speed -0.005;
 	} 
 }
 
