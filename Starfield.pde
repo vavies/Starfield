@@ -39,7 +39,7 @@ class dot implements circles{
 	void show(){
 		//ellipse(center,center,300,300);
 		noStroke();
-		fill(100,150,250);
+		fill((int)(Math.random()*10+95),(int)(Math.random()*40+100),(int)(Math.random()*10+245));
 		ellipse(myX,myY,10,10);
 	}
 	void move(int u){
@@ -51,7 +51,7 @@ class dot implements circles{
 class counterclock extends dot{
 	void show(){
 		noStroke();
-		fill(110,180,250);
+		fill((int)(Math.random()*10+105),(int)(Math.random()*10+175),250);
 		ellipse(myX,myY,10,10);
 	}
 	void move(int u){
