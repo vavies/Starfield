@@ -1,8 +1,8 @@
 int center = 250;
-float outerK1 = .4;
-float outerK2 = 1.8;
-float innerK1 = 7.5;
-float innerK2 = 1.5;
+float outerK1 = 3;
+float outerK2 = 1.2;
+float innerK1 = 1;
+float innerK2 = 0.9;
 dot [] olive;
 void setup(){
 	size(500,500);
@@ -15,6 +15,10 @@ void setup(){
 	}
 
 }
+interface circles{
+	void show();
+	void move(int u);
+}
 void draw(){
 	background(0);
 	for(int i = 0; i<olive.length; i++){
@@ -23,7 +27,7 @@ void draw(){
 	}
 
 }
-class dot{
+class dot implements circles{
 	float myX, myY;
 	float angle, speed;
 	dot(){
@@ -51,8 +55,8 @@ class counterclock extends dot{
 		ellipse(myX,myY,10,10);
 	}
 	void move(int u){
-		myX = center + 100*cos(innerK1*(u+speed));
-		myY = center + 100*sin(innerK2*(u+speed));
+		myX = center + 140*cos(innerK1*(u+speed));
+		myY = center + 140*sin(innerK2*(u+speed));
 		speed = speed -0.005;
 	} 
 }
